@@ -1,0 +1,230 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block extrastatic %}	
+{% endblock %}
+
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+           <div class="panel panel-white">
+                       <hr>
+              <div class="panel-body">
+                               
+                    <div class="invoice">
+                            {% for datos in cliente %}  
+
+                                          <!--fin--->
+                          
+                               <div id="page-wrap">
+                                    <div id="address"> 
+
+                                                <br>
+                                                <br>
+                                                {% for empre in empresa %}                                                          
+
+
+                                                 Empresa: {{empre.empresa|capfirst }}  <br>
+                                                 Nit:  {{ empre.nit}}<br>
+                                                 Direccion: {{empre.domicilio}}
+
+
+
+                                                 <br>
+                                                 <br>
+
+                                                Empresa: {{datos.empresa}}<br>
+                                                Nit:{{datos.nit}}<br>
+                                                Nombre: {{datos.nombre|capfirst}}{{datos.apellidos|capfirst}}<br>
+                                                Direcciòn: {{datos.domicilio}}<br>
+                                                telefono:{{datos.telefono}} <br>
+
+                                      </div>
+
+
+                                          <div id="logo">
+
+                                              {% load static %} 
+                                              <img id="image" src="{% static 'images/psibombas.png' %}" alt="logo" width="300 " height="100" />
+                                          </div>
+
+                                              <div style="clear:both"></div>
+                                                  <div id="customer">
+                                                                <table id="meta">
+                                                                      <tr>
+                                                                          <td class="meta-head">Cuenta de cobro #</td>
+                                                                          <td><textarea>000{{object_list.id}}</textarea></td>
+                                                                      </tr>
+                                                                          <tr>                    
+                                                                    <tr>
+
+                                                                        <td class="meta-head">Fecha</td>
+                                                                        <td>
+                                                                            <div class="col-sm-12  ">
+                                                                               {{ object_list.fecha_creacion}}
+
+                                                                       </div>
+
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </table>
+
+                                                  </div>
+
+                                                  <table id="items">
+
+                                                    <tr>
+                                                        <th>Cantidad</th>
+                                                        <th>Descripcion</th>
+                                                        <th>Observacion</th>
+                                                        <th>Costo Unitario</th>
+                                                        <th>Total</th>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name" >{{object_list.cantidad}}</td>
+                                                        <td class="description">{{object_list.descripcion}}</td>
+                                                        <td>{{object_list.observacion}}</td>
+                                                        <td>{{object_list.precio_unitario}}</td>
+                                                        <td>{{object_list.precio_total}}</td>
+                                                    </tr>
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad1}}</td>
+                                                        <td class="description">{{object_list.descripcion1}}</td>
+                                                        <td>{{object_list.observacion1}}</td>
+                                                        <td>{{object_list.precio_unitario1}}</td>
+                                                        <td>{{object_list.precio_total1}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad2}}</td>
+                                                        <td class="description">{{object_list.descripcion2}}</td>
+                                                        <td>{{object_list.observacion2}}</td>
+                                                        <td>{{object_list.precio_unitario2}}</td>
+                                                        <td>{{object_list.precio_total2}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad3}}</td>
+                                                        <td class="description">{{object_list.descripcion3}}</td>
+                                                        <td>{{object_list.observacion3}}</td>
+                                                        <td>{{object_list.precio_unitario3}}</td>
+                                                        <td>{{object_list.precio_total3}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad4}}</td>
+                                                        <td class="description">{{object_list.descripcion4}}</td>
+                                                        <td>{{object_list.observacion4}}</td>
+                                                        <td>{{object_list.precio_unitario4}}</td>
+                                                        <td>{{object_list.precio_total4}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{form.cantidad5}}</td>
+                                                        <td class="description">{{form.descripcion5}}</td>
+                                                        <td>{{object_list.observacion5}}</td>
+                                                        <td>{{object_list.precio_unitario5}}</td>
+                                                        <td>{{object_list.precio_total5}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad6}}</td>
+                                                        <td class="description">{{form.descripcion6}}</td>
+                                                        <td>{{object_list.observacion6}}</td>
+                                                        <td>{{object_list.precio_unitario6}}</td>
+                                                        <td>{{object_list.precio_total6}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{form.cantidad7}}</td>
+                                                        <td class="description">{{form.descripcion7}}</td>
+                                                        <td>{{form.observacion7}}</td>
+                                                        <td>{{form.precio_unitario7}}</td>
+                                                        <td>{{form.precio_total7}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad8}}</td>
+                                                        <td class="description">{{object_list.descripcion8}}</td>
+                                                        <td>{{object_list.observacion8}}</td>
+                                                        <td>{{object_list.precio_unitario8}}</td>
+                                                        <td>{{object_list.precio_total8}}</td>
+                                                    </tr>
+
+                                                    <tr class="item-row">
+                                                        <td class="item-name">{{object_list.cantidad9}}</td>
+                                                        <td class="description">{{object_list.descripcion9}}</td>
+                                                        <td>{{object_list.observacion9}}</td>
+                                                        <td>{{object_list.precio_unitario9}}</td>
+                                                        <td>{{object_list.precio_total9}}</td>
+                                                    </tr>
+
+
+
+                                                    <tr id="hiderow">
+
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="2" class="blank"> </td>
+                                                        <td colspan="2" class="total-line">Subtotal</td>
+                                                        <td class="total-value">{{object_list.total}}<div id="subtotal"></div></td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td colspan="2" class="blank"></td>
+                                                        <td colspan="2" class="total-line">Total</td>
+                                                        <td class="total-value"><div> {{object_list.total}}</div></td>
+                                                    </tr>
+
+
+                                                  </table>
+
+                                                  <br>
+                                                  <div  class="col-sm-15" >
+
+
+                                                    {% load static %}
+                                                    <img id="image"  src="{% static empre.firma.url %}" width="200 " height="50"/>
+                                                   </div>
+                                                  <div class="col-sm-15">
+                                                      {{ empre.first_name|capfirst}} {{ empre.last_name|capfirst}}        
+
+                                                  </div>                                                    
+
+                                          </div>
+                                                  {% endfor %}  
+                                          {%endfor%}               
+
+                                      
+                                         
+                                           <div class="row">
+                                             <div class="col-sm-12">
+                                                  <br>
+                                                  <a onclick="javascript:window.print();" class="btn btn-lg btn-light-blue hidden-print">
+                                                          PDF <i class="fa fa-print"></i>
+                                                  </a>
+
+                                              </div>
+                                        </div>
+                               </div>
+                
+                     </div> 
+                         
+             </div>
+     </div>
+</div>
+               <!-- end: FORM WIZARD PANEL -->
+					<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

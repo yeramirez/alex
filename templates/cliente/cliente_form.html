@@ -1,0 +1,188 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    
+        
+                
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Formulario Clientes
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+        
+               <div class="panel panel-white">
+                       <div class="panel-heading">
+                               <h4 class="panel-title">Ingresar nuevo <span class="text-bold">Cliente</span></h4>
+                               <div class="panel-tools">
+                                       <div class="dropdown">
+                                               <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                       <i class="fa fa-cog"></i>
+                                               </a>
+                                               <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                       <li>
+                                                               <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
+                                                       </li>
+                                                       <li>
+                                                               <a class="panel-refresh" href="#">
+                                                                       <i class="fa fa-refresh"></i> <span>Refresh</span>
+                                                               </a>
+                                                       </li>
+                                                       <li>
+                                                               <a class="panel-config" href="#panel-config" data-toggle="modal">
+                                                                       <i class="fa fa-wrench"></i> <span>Configurations</span>
+                                                               </a>
+                                                       </li>
+                                                       <li>
+                                                               <a class="panel-expand" href="#">
+                                                                       <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                               </a>
+                                                       </li>
+                                               </ul>
+                                       </div>
+                               </div>
+                       </div>
+                       <div class="panel-body">
+                           
+                               
+                               <form action="" method="post" enctype="multipart/form-data" role="form" class="smart-wizard form-horizontal" id="form">{% csrf_token %}
+                                   
+                                       <div id="wizard" class="swMain">
+                                               <ul>
+                                                       <li>
+                                                               <a href="#step-1">
+                                                                       <div class="stepNumber">
+                                                                               1
+                                                                       </div>
+                                                                       <span class="stepDesc"> Paso 1
+                                                                               <br />
+                                                                               <small>Nuevo Cliente</small> </span>
+                                                               </a>
+                                                       </li>
+                                                       <li>
+                                         
+                                                               <a href="#step-2">
+                                                                       <div class="stepNumber">
+                                                                               2
+                                                                       </div>
+                                                                       <span class="stepDesc"> Paso 2
+                                                                               <br />
+                                                                               <small>Finalizar</small> </span>
+                                                               </a>
+                                                       </li>
+                                                      
+                                               </ul>
+                                               <div class="progress progress-xs transparent-black no-radius active">
+                                                       <div aria-valuemax="100" aria-valuemin="0" role="progressbar" class="progress-bar partition-green step-bar">
+                                                               <span class="sr-only"> 0% Complete (success)</span>
+                                                       </div>
+                                               </div>
+                                               <div id="step-1">
+                                                   
+                                                       <h2 class="StepTitle">Datos Personales</h2>
+                                                       <div class="form-group">
+                                                               <label class="col-sm-2 control-label" for="id_nombre">
+                                                                       Nombres <span class="symbol required" ></span>
+                                                               </label>
+                                                               <div class="col-sm-4">
+                                                                        {{ form.nombre }}
+                                                                </div>
+                                                       </div>
+                                                       <div class="form-group">
+                                                           <label class="col-sm-2 control-label" for="id_apellidos">
+                                                                       Apellidos <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-sm-4">
+                                                                       {{ form.apellidos }}
+                                                               </div>
+                                                       </div>
+                                                       <div class="form-group">
+                                                           <label class="col-sm-2 control-label" for="id_apellidos">
+                                                                       Domicilio <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-sm-4">
+                                                                       {{ form.domicilio }}
+                                                               </div>
+                                                       </div>
+                                                        <div class="form-group">
+                                                           <label class="col-sm-2 control-label" for="id_apellidos">
+                                                                       Correo Electronico <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-sm-4">
+                                                                       {{ form.mail }}
+                                                               </div>
+                                                       </div>
+                                                       
+                                                   <div class="form-group">
+                                                                                                                     
+                                                           <label class="col-sm-2 control-label" for="id_sexo">
+                                                                       Sexo <span class="symbol required"></span>
+                                                           </label>
+                                                           <div class="row">
+                                                               <div class="col-xs-1">
+                                                                       {{form.sexo}}
+                                                               </div>
+                                                               <label class="col-sm-2 control-label" for="id_fr">
+                                                                      Empresa <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-xs-1">
+                                                                       {{form.empresa}}
+                                                               </div>
+                                                               <label class="col-sm-1 control-label" for="id_pc">
+                                                                      Nit <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-xs-1">
+                                                                       {{form.nit}}
+                                                               </div>
+                                                               <label class="col-sm-1 control-label" for="id_pc">
+                                                                      Telefono <span class="symbol required"></span>
+                                                               </label>
+                                                               <div class="col-xs-1">
+                                                                       {{form.telefono}}
+                                                               </div>
+                                                               
+                                                           </div>
+                                                   </div>
+                                        
+                                       
+                                                       <div class="form-group">
+                                                            <div class="col-sm-6 col-sm-offset-11">
+                                                                    <button type="submit" class="btn btn-success">
+                                                                            Finish <i class="fa fa-arrow-circle-right"></i>
+                                                                       
+                                                                    </button>
+                                                            </div>
+                                                       </div>
+                                                </div>
+                                         </div>
+                               </form>
+                                                      
+                       </div>
+               </div>
+               <!-- end: FORM WIZARD PANEL -->
+       </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+                
+{% endblock %}
+
+		

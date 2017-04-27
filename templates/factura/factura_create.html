@@ -1,0 +1,258 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Psibombas
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+    <div class="col-sm-12">
+            <!-- start: FORM WIZARD PANEL -->
+
+     <div class="panel panel-white">
+            <div class="panel-heading">
+                    <h4 class="panel-title">Text <span class="text-bold">Area</span></h4>
+                    <div class="panel-tools">
+                            <div class="dropdown">
+                                    <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                            <i class="fa fa-cog"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                            <li>
+                                                    <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
+                                            </li>
+                                            <li>
+                                                    <a class="panel-refresh" href="#">
+                                                            <i class="fa fa-refresh"></i> <span>Refresh</span>
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                    <a class="panel-config" href="#panel-config" data-toggle="modal">
+                                                            <i class="fa fa-wrench"></i> <span>Configurations</span>
+                                                    </a>
+                                            </li>
+                                            <li>
+                                                    <a class="panel-expand" href="#">
+                                                            <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                    </a>
+                                            </li>
+                                    </ul>
+                            </div>
+                            <a class="btn btn-xs btn-link panel-close" href="#">
+                                    <i class="fa fa-times"></i>
+                            </a>
+                    </div>
+            </div>
+       
+
+       <form action="" method="post" enctype="multipart/form-data" role="form"  id="form">{% csrf_token %}         
+              
+
+                <body>
+
+                        <div id="page-wrap" >
+                            Mi Empresa:     {{form.miempresa}}   
+                            <br>
+                            
+                        <div id="page-wrap">
+                            <br>
+                            Cliente:    {{form.clientes}}     
+                            
+                               <div id="logo">
+                     
+                                    {% load static %} 
+                                    <img id="image" src="{% static 'images/psibombas.png' %}" alt="logo" width="300 " height="100" />
+                                </div>
+                            
+                       </div>
+
+                                                    
+                            
+                                <div style="clear:both"></div>
+
+                                <div id="customer">
+
+
+                            <table id="meta">
+                               
+                                <tr>
+
+                                    <td class="meta-head">Fecha</td>
+                                    <td>
+                                        <div class="col-sm-6  input-append bootstrap-datetimepicker">
+                                           {{form.fecha_creacion}}
+                                      <span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
+                                   </div>
+                                        
+                                    </td>
+                                </tr>
+                               
+                            </table>
+
+                                </div>
+
+                                <table id="items">
+
+                                  <tr>
+                                      <th>Cantidad</th>
+                                      <th>Descripcion</th>
+                                      <th>Observacion</th>
+                                      <th>Costo Unitario</th>
+                                      <th>Total</th>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name" >{{form.cantidad}}</td>
+                                      <td class="description">{{form.descripcion}}</td>
+                                      <td>{{form.observacion}}</td>
+                                      <td>{{form.precio_unitario}}</td>
+                                      <td>{{form.precio_total}}</td>
+                                  </tr>
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad1}}</td>
+                                      <td class="description">{{form.descripcion1}}</td>
+                                      <td>{{form.observacion1}}</td>
+                                      <td>{{form.precio_unitario1}}</td>
+                                      <td>{{form.precio_total1}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad2}}</td>
+                                      <td class="description">{{form.descripcion2}}</td>
+                                      <td>{{form.observacion2}}</td>
+                                      <td>{{form.precio_unitario2}}</td>
+                                      <td>{{form.precio_total2}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad3}}</td>
+                                      <td class="description">{{form.descripcion3}}</td>
+                                      <td>{{form.observacion3}}</td>
+                                      <td>{{form.precio_unitario3}}</td>
+                                      <td>{{form.precio_total3}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad4}}</td>
+                                      <td class="description">{{form.descripcion4}}</td>
+                                      <td>{{form.observacion4}}</td>
+                                      <td>{{form.precio_unitario4}}</td>
+                                      <td>{{form.precio_total4}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad5}}</td>
+                                      <td class="description">{{form.descripcion5}}</td>
+                                      <td>{{form.observacion5}}</td>
+                                      <td>{{form.precio_unitario5}}</td>
+                                      <td>{{form.precio_total5}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad6}}</td>
+                                      <td class="description">{{form.descripcion6}}</td>
+                                      <td>{{form.observacion6}}</td>
+                                      <td>{{form.precio_unitario6}}</td>
+                                      <td>{{form.precio_total6}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad7}}</td>
+                                      <td class="description">{{form.descripcion7}}</td>
+                                      <td>{{form.observacion7}}</td>
+                                      <td>{{form.precio_unitario7}}</td>
+                                      <td>{{form.precio_total7}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad8}}</td>
+                                      <td class="description">{{form.descripcion8}}</td>
+                                      <td>{{form.observacion8}}</td>
+                                      <td>{{form.precio_unitario8}}</td>
+                                      <td>{{form.precio_total8}}</td>
+                                  </tr>
+
+                                  <tr class="item-row">
+                                      <td class="item-name">{{form.cantidad9}}</td>
+                                      <td class="description">{{form.descripcion9}}</td>
+                                      <td>{{form.observacion9}}</td>
+                                      <td>{{form.precio_unitario9}}</td>
+                                      <td>{{form.precio_total9}}</td>
+                                  </tr>
+
+                                  
+
+                                  <tr id="hiderow">
+                                      
+                                  </tr>
+
+                                  <tr>
+                                      <td colspan="2" class="blank"> </td>
+                                      <td colspan="2" class="total-line">Subtotal</td>
+                                      <td class="total-value"><div id="subtotal"></div></td>
+                                  </tr>
+                                  <tr>
+
+                                      <td colspan="2" class="blank"></td>
+                                      <td colspan="2" class="total-line">Total</td>
+                                      <td class="total-value"><div> {{form.total}}</div></td>
+                                  </tr>
+                                 
+                                  
+                                </table>
+
+                                <div id="terms">
+                                  <div class="form-group">
+                                        <div class="col-sm-6 col-sm-offset-8">
+                                                <button type="submit" class="btn btn-success">
+                                                        Generar <i class="fa fa-arrow-circle-right"></i>
+
+                                                </button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                        </div>
+                    
+                </body>
+       </form>
+
+
+    </div>
+ </div>
+    
+    
+    
+    
+    
+
+{% block extrajs %}
+
+ 
+
+
+{% endblock %}
+<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}

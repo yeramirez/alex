@@ -1,0 +1,126 @@
+
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+<div class="row">
+       <div class="col-md-12">
+               <ol class="breadcrumb">
+                       <li>
+                               <a href="#">
+                                       Dashboard
+                               </a>
+                       </li>
+                       <li class="active">
+                               Formulario Pasiente
+                       </li>
+               </ol>
+       </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+       <div class="col-sm-12">
+               <!-- start: FORM WIZARD PANEL -->
+        
+               <div class="panel panel-white">
+                       <div class="panel-heading">
+                               <h4 class="panel-title">Formulario <span class="text-bold">Historia</span></h4>
+                               <div class="panel-tools">
+                                       <div class="dropdown">
+                                               <a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
+                                                       <i class="fa fa-cog"></i>
+                                               </a>
+                                               <ul class="dropdown-menu dropdown-light pull-right" role="menu">
+                                                       <li>
+                                                               <a class="panel-collapse collapses" href="#"><i class="fa fa-angle-up"></i> <span>Collapse</span> </a>
+                                                       </li>
+                                                                                                     
+                                                       <li>
+                                                               <a class="panel-expand" href="#">
+                                                                       <i class="fa fa-expand"></i> <span>Fullscreen</span>
+                                                               </a>
+                                                       </li>
+                                               </ul>
+                                       </div>
+                               </div>
+                       </div>
+                       <div class="panel-body">
+                            
+                               <table class="table table-bordered">
+                                  
+                                       <thead>
+                                           
+                                               <tr>
+
+                                                       <td>Nombre</td>
+                                                       <td>Apellidos</td>
+                                                       <td>Documento</td>
+                                                       <td>Editar</td>
+
+                                               </tr>
+
+                                       </thead>
+                                            <tbody>
+                     
+                                                    {%for dato in datos %}
+
+                                                        {% for paciente,historias in dato.items %}
+                                                        <tr>
+
+                                                            <td>{{ paciente.nombre}}</td>
+                                                            <td>{{ paciente.apellidos }}</td>
+                                                            <td>{{ paciente.Doc }}</td>
+                                                  
+                                                            <td>
+                                                               
+                                                                    <a class="fa fa-edit" href="{% url 'paciente:paciente_editar' paciente.id %}">Editar</a>
+                                                                    															
+                                                            </td>
+
+                                                    </tr>
+
+                                                    <td>
+                                                    <div class="col-md-6">
+                                                        <div class="panel panel-white">
+
+                                                            {% for historia in historias %}
+                                                             <form  class="" id="searchform" method="POST" action="{% url 'paciente:paciente_mostrar' %}">{% csrf_token %}
+                                                                    <a class="list-group-item"  href="{% url 'historia:historia_editar' historia.id %}"><i class="fa fa-book fa-fw"></i>&nbsp; {{historia.fecha_creacion}}</a>
+                                                             </form>    
+                                                            {% endfor %}
+
+                                                                           
+                                                                   </div>
+                                                           </div>
+                                                      
+                                                    </td>
+                                                        {% endfor%}
+
+
+                                                    {% endfor %}
+                                              
+
+                                                    <!--inicio-->
+
+                                                   <!--final-->
+
+
+                                         </tbody>   
+                               </table>
+                          
+                       </div>
+               </div>
+               <!-- end: FORM WIZARD PANEL -->
+       </div>
+</div>
+						<!-- end: PAGE CONTENT-->
+			
+<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->	
+
+				
+
+{% endblock %}
